@@ -72,5 +72,6 @@ public class Function {
         TextView txtSnack = (TextView) snackView.findViewById(android.support.design.R.id.snackbar_text);
         txtSnack.setTextColor(Color.WHITE);
         snackbar.show();
+        //// end ///
     }
 }
