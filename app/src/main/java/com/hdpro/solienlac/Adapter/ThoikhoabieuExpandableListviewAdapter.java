@@ -4,22 +4,15 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hdpro.solienlac.R;
-import com.hdpro.solienlac.Sqlite.MyDatabas_Helper;
-import com.hdpro.solienlac.Thoikhoabieu;
+import com.hdpro.solienlac.Model.Thoikhoabieu;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by User on 09/12/2016.

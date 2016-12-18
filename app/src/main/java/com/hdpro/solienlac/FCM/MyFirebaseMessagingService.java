@@ -11,11 +11,8 @@ import android.support.v4.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.hdpro.solienlac.Fragment.TinnhanFragment;
-import com.hdpro.solienlac.Login;
-import com.hdpro.solienlac.MainActivity;
+import com.hdpro.solienlac.Model.Login;
 import com.hdpro.solienlac.R;
-import com.hdpro.solienlac.Sqlite.MyDatabas_Helper;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

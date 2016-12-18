@@ -2,7 +2,6 @@ package com.hdpro.solienlac.Fragment;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -12,9 +11,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.view.ContextMenu;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,17 +22,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.hdpro.solienlac.Adapter.PhanhoiAdapter;
-import com.hdpro.solienlac.Phanhoi;
+import com.hdpro.solienlac.Model.Phanhoi;
 import com.hdpro.solienlac.R;
 import com.hdpro.solienlac.Sqlite.MyDatabas_Helper;
-import com.hdpro.solienlac.function;
+import com.hdpro.solienlac.Function;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -53,8 +48,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 /**
  * Created by User on 02/11/2016.
@@ -224,9 +217,9 @@ public class PhanhoiFragment extends Fragment{
     }
     private void guiphanhoi() {
         if(txtTieude.getText().toString().equals("")){
-            new function().thongbaoLoi("Bạn chưa nhập Tiêu đề",view,getActivity());
+            new Function().thongbaoLoi("Bạn chưa nhập Tiêu đề",view,getActivity());
         }else if(txtNoidung.getText().toString().equals("")){
-            new function().thongbaoLoi("Bạn chưa nhập Nội dung",view,getActivity());
+            new Function().thongbaoLoi("Bạn chưa nhập Nội dung",view,getActivity());
         }else {
             DocjsonPhanhoi docjsonPhanhoi=new DocjsonPhanhoi();
             docjsonPhanhoi.execute("http://files.pinyeu.com/solienlac/json/json_phanhoi.php");
@@ -249,15 +242,15 @@ public class PhanhoiFragment extends Fragment{
             progressDialog.dismiss();
             if(s!=null && s!="") {
                 if (s.equals("false")) {
-                    new function().thongbaoLoi("Gửi phản hồi thất bại",view,getActivity());//Thông báo không thành công
+                    new Function().thongbaoLoi("Gửi phản hồi thất bại",view,getActivity());//Thông báo không thành công
                 } else {
-                    new function().thongbaoThanhcong("Gửi phản hồi thành công",view,getActivity());//Thông báo thành công
+                    new Function().thongbaoThanhcong("Gửi phản hồi thành công",view,getActivity());//Thông báo thành công
                     myDatabas_helper.ThemPhanhoi(IDHS,txtTieude.getText().toString(),txtNoidung.getText().toString(),datenow);
                     getDulieuPhanhoi();
                     phanhoiAdapter.notifyDataSetChanged();
                 }
             }else {
-                new function().thongbaoLoi("Lỗi kết nối",view,getActivity());//Thông báo thành công
+                new Function().thongbaoLoi("Lỗi kết nối",view,getActivity());//Thông báo thành công
             }
         }
     }
@@ -276,17 +269,17 @@ public class PhanhoiFragment extends Fragment{
             case R.id.delete:
                 if(myDatabas_helper.DeleteItemPhanhoi(phanhoiAdapter.getItem(info.position).getTieudePH(),phanhoiAdapter.getItem(info.position).getNoidungPH())>0){
                     phanhoiAdapter.remove(phanhoiAdapter.getItem(info.position));
-                    new function().thongbaoThanhcong("Đã xóa",view,getActivity());
+                    new Function().thongbaoThanhcong("Đã xóa",view,getActivity());
                 }else {
-                    new function().thongbaoLoi("Xóa không thành công",view,getActivity());
+                    new Function().thongbaoLoi("Xóa không thành công",view,getActivity());
                 }
                 return true;
             case R.id.deleteall:
                 if(myDatabas_helper.DeleteAllPhanhoi(IDHS)>0){
                     phanhoiAdapter.clear();
-                    new function().thongbaoThanhcong("Đã xóa tất cả",view,getActivity());
+                    new Function().thongbaoThanhcong("Đã xóa tất cả",view,getActivity());
                 }else {
-                    new function().thongbaoLoi("Xóa không thành công",view,getActivity());
+                    new Function().thongbaoLoi("Xóa không thành công",view,getActivity());
                 }
                 return true;
             default:

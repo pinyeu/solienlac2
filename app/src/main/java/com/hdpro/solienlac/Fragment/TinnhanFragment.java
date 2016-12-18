@@ -3,9 +3,7 @@ package com.hdpro.solienlac.Fragment;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.ContextMenu;
@@ -18,22 +16,15 @@ import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.hdpro.solienlac.Adapter.TinnhanAdapter;
-import com.hdpro.solienlac.MainActivity;
 import com.hdpro.solienlac.R;
 import com.hdpro.solienlac.Sqlite.MyDatabas_Helper;
-import com.hdpro.solienlac.Tinnhan;
-import com.hdpro.solienlac.function;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.hdpro.solienlac.Model.Tinnhan;
+import com.hdpro.solienlac.Function;
 
 import java.util.ArrayList;
 
@@ -135,17 +126,17 @@ public class TinnhanFragment extends Fragment {
             case R.id.delete:
                 if(myDatabas_helper.DeleteItemTinnhan(tinnhanAdapter.getItem(info.position).getIdTinnhan())>0){
                     tinnhanAdapter.remove(tinnhanAdapter.getItem(info.position));
-                    new function().thongbaoThanhcong("Đã xóa",view,getActivity());
+                    new Function().thongbaoThanhcong("Đã xóa",view,getActivity());
                 }else {
-                    new function().thongbaoLoi("Xóa không thành công",view,getActivity());
+                    new Function().thongbaoLoi("Xóa không thành công",view,getActivity());
                 }
                 return true;
             case R.id.deleteall:
                 if(myDatabas_helper.DeleteAllTinnhan(IDHS)>0){
                     tinnhanAdapter.clear();
-                    new function().thongbaoThanhcong("Đã xóa tất cả",view,getActivity());
+                    new Function().thongbaoThanhcong("Đã xóa tất cả",view,getActivity());
                 }else {
-                    new function().thongbaoLoi("Xóa không thành công",view,getActivity());
+                    new Function().thongbaoLoi("Xóa không thành công",view,getActivity());
                 }
                 return true;
             default:

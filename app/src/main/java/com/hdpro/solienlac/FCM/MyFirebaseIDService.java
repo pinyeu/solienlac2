@@ -2,7 +2,6 @@ package com.hdpro.solienlac.FCM;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
-import com.hdpro.solienlac.FireBaseIDTask;
 import com.hdpro.solienlac.MainActivity;
 
 /**

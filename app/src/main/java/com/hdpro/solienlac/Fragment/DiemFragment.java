@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -17,18 +16,15 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.OvershootInterpolator;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.hdpro.solienlac.Adapter.DiemAdapter;
-import com.hdpro.solienlac.Diem;
-import com.hdpro.solienlac.MainActivity;
+import com.hdpro.solienlac.Model.Diem;
 import com.hdpro.solienlac.R;
 import com.hdpro.solienlac.Sqlite.MyDatabas_Helper;
-import com.hdpro.solienlac.function;
+import com.hdpro.solienlac.Function;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -69,7 +65,6 @@ public class DiemFragment extends Fragment {
         getDulieuDiem1();
         getDulieuDiem2();
         addEvents();
-        
         return view;
     }
 
@@ -147,7 +142,7 @@ public class DiemFragment extends Fragment {
 
         @Override
         protected String doInBackground(String... strings) {
-            function docjon= new function();
+            Function docjon= new Function();
             return docjon.docNoidungtuURL(strings[0]);
         }
 
@@ -170,12 +165,12 @@ public class DiemFragment extends Fragment {
                 }
                 getDulieuDiem1();
                 diemAdapter1.notifyDataSetChanged();
-                new function().thongbaoThanhcong("Tải dữ liệu hoàn tất", view, getActivity());//Thông báo thành công
+                new Function().thongbaoThanhcong("Tải dữ liệu hoàn tất", view, getActivity());//Thông báo thành công
             } catch (JSONException e) {
                 e.printStackTrace();
                 lvBangdiemHK1.setVisibility(view.GONE);
                 textViewTrangthaiBD.setText("Lỗi kết lối Internet :(");
-                new function().thongbaoLoi("Lỗi kết nối",view,getActivity());//Thông báo thành công
+                new Function().thongbaoLoi("Lỗi kết nối",view,getActivity());//Thông báo thành công
             }
         }
     }//tải dữ liệu kỳ 1
@@ -183,7 +178,7 @@ public class DiemFragment extends Fragment {
 
         @Override
         protected String doInBackground(String... strings) {
-            function docjsonk2 = new function();
+            Function docjsonk2 = new Function();
             return docjsonk2.docNoidungtuURL(strings[0]);
         }
 

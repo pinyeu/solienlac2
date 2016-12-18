@@ -11,10 +11,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.hdpro.solienlac.Adapter.ChatAdapter;
-import com.hdpro.solienlac.Phuhuynh;
+import com.hdpro.solienlac.Model.Phuhuynh;
 import com.hdpro.solienlac.R;
 import com.hdpro.solienlac.Sqlite.MyDatabas_Helper;
-import com.hdpro.solienlac.function;
+import com.hdpro.solienlac.Function;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -76,7 +76,7 @@ public class ChatFragment extends Fragment {
     class DocJsonPhuhuynh extends AsyncTask<String, Void,String>{
         @Override
         protected String doInBackground(String... strings) {
-            function docjson = new function();
+            Function docjson = new Function();
             return docjson.docNoidungtuURL(strings[0]);
         }
 

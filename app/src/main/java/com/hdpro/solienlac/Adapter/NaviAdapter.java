@@ -1,7 +1,6 @@
 package com.hdpro.solienlac.Adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hdpro.solienlac.Navigation;
+import com.hdpro.solienlac.Model.Navigation;
 import com.hdpro.solienlac.R;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.zip.Inflater;
 
 /**
  * Created by User on 03/11/2016.

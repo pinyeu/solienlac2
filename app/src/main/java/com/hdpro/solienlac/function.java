@@ -20,7 +20,7 @@ import java.net.URLConnection;
  * Created by User on 09/11/2016.
  */
 
-public class function {
+public class Function {
     public String docNoidungtuURL(String myURL){
         StringBuilder content = new StringBuilder();
         try {

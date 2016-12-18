@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hdpro.solienlac.R;
-import com.hdpro.solienlac.Tinnhan;
+import com.hdpro.solienlac.Model.Tinnhan;
 
 import java.util.ArrayList;
 

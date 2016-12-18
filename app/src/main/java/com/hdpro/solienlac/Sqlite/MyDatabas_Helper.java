@@ -6,14 +6,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.hdpro.solienlac.Diem;
-import com.hdpro.solienlac.Phanhoi;
-import com.hdpro.solienlac.Phuhuynh;
-import com.hdpro.solienlac.Thoikhoabieu;
-import com.hdpro.solienlac.Tinnhan;
+import com.hdpro.solienlac.Model.Diem;
+import com.hdpro.solienlac.Model.Phanhoi;
+import com.hdpro.solienlac.Model.Phuhuynh;
+import com.hdpro.solienlac.Model.Thoikhoabieu;
+import com.hdpro.solienlac.Model.Tinnhan;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * Created by User on 11/11/2016.

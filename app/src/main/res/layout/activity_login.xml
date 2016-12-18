@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/style_background_login"
-    tools:context="com.hdpro.solienlac.Login">
+    tools:context="com.hdpro.solienlac.Model.Login">
 
     <ScrollView
         android:layout_width="match_parent"

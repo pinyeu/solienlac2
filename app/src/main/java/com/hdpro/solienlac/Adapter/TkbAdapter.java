@@ -1,7 +1,6 @@
 package com.hdpro.solienlac.Adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.hdpro.solienlac.R;
-import com.hdpro.solienlac.Thoikhoabieu;
+import com.hdpro.solienlac.Model.Thoikhoabieu;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by User on 19/11/2016.

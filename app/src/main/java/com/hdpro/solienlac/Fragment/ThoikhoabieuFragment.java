@@ -7,13 +7,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,24 +17,19 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ExpandableListView;
-import android.widget.FrameLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hdpro.solienlac.Adapter.ThoikhoabieuExpandableListviewAdapter;
-import com.hdpro.solienlac.Adapter.TkbAdapter;
-import com.hdpro.solienlac.Login;
 import com.hdpro.solienlac.R;
 import com.hdpro.solienlac.Sqlite.MyDatabas_Helper;
-import com.hdpro.solienlac.Thoikhoabieu;
-import com.hdpro.solienlac.function;
+import com.hdpro.solienlac.Model.Thoikhoabieu;
+import com.hdpro.solienlac.Function;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -135,7 +126,7 @@ public class ThoikhoabieuFragment extends Fragment {
 
         @Override
         protected String doInBackground(String... strings) {
-            function docjson = new function();
+            Function docjson = new Function();
             return docjson.docNoidungtuURL(strings[0]);
         }
 
@@ -176,11 +167,11 @@ public class ThoikhoabieuFragment extends Fragment {
                     trangthaiTKB=1;
                 }
                 getDulieuthoikhoabieu();
-                new function().thongbaoThanhcong("Tải dữ liệu hoàn tất",view,getActivity());//Thông báo thành công
+                new Function().thongbaoThanhcong("Tải dữ liệu hoàn tất",view,getActivity());//Thông báo thành công
 
             } catch (JSONException e) {
                 e.printStackTrace();
-                new function().thongbaoLoi("Lỗi kết nối",view,getActivity());//Thông báo thành công
+                new Function().thongbaoLoi("Lỗi kết nối",view,getActivity());//Thông báo thành công
             }
         }
     }
